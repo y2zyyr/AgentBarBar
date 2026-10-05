@@ -5,6 +5,8 @@
 <p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><strong>Download for macOS →</strong></a></p>
 <p align="center">Apple Silicon · macOS 14+ · 中文 / English</p>
 
+<p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><img src="assets/poster-en.png" width="680" alt="AgentBarBar promotional poster"></a></p>
+
 ![AgentBarBar usage overview](assets/overview-en.png)
 <p align="center"><sub>Demo data</sub></p>
 
@@ -41,6 +43,10 @@ Available metrics depend on the records an Agent provides. Missing counters rema
 - [Report a bug / suggest a feature](https://github.com/y2zyyr/AgentBarBar/issues)
 
 Please include your app version, macOS version and Agent name. Chat logs and account credentials are not needed.
+
+## Share AgentBarBar
+
+[English poster](assets/poster-en.png) · [中文海报](assets/poster-zh.png)
 
 ## About this repository
 

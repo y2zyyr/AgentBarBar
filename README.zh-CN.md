@@ -5,6 +5,8 @@
 <p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><strong>下载 macOS 版 →</strong></a></p>
 <p align="center">Apple Silicon · macOS 14+ · 中文 / English</p>
 
+<p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><img src="assets/poster-zh.png" width="680" alt="AgentBarBar 推广海报"></a></p>
+
 ![AgentBarBar 用量概览](assets/overview-zh.png)
 <p align="center"><sub>演示数据 · Demo data</sub></p>
 
@@ -41,6 +43,10 @@ AgentBarBar 是一个 macOS 菜单栏 AI 用量工具。今天用了多少 Token
 - [报告问题 / 建议功能](https://github.com/y2zyyr/AgentBarBar/issues)
 
 反馈时请说明应用版本、macOS 版本和使用的 Agent；无需提供聊天记录或账号凭证。
+
+## 推广海报
+
+[中文海报](assets/poster-zh.png) · [English poster](assets/poster-en.png)
 
 ## 关于这个仓库
 
