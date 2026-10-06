@@ -1,8 +1,8 @@
-# AgentBarBar Windows — 1.0.4
+# AgentBarBar Windows — 1.0.6
 
-[English](WINDOWS.md) · [下载安装包](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Setup.exe)
+[English](WINDOWS.md) · [下载安装包](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.6/AgentBarBar-1.0.6-Windows-x64-Setup.exe)
 
-Windows x64 系统托盘应用，版本保持 1.0.4。安装标题、说明和按钮在每一页同时显示中文和 English。
+Windows x64 系统托盘应用，版本 1.0.6（构建 38）。安装标题、说明和按钮在每一页同时显示中文和 English。
 
 ## 安装和使用
 
@@ -22,13 +22,17 @@ Windows x64 系统托盘应用，版本保持 1.0.4。安装标题、说明和�
 | Claude Code | Windows 真实数据源采集已验证 |
 | Kimi CLI | Windows 真实历史记录已验证；实时计数仍为部分验证 |
 | DeepSeek Harness | Windows 真实 SQLite 用量账本独立核对通过；重复同步不会重复计数 |
+| Qwen Code | 已解析版本化月度 Token 账本，按账本记录 ID 去重；验证机器没有可用数据，仅完成样本验证 |
+| Cline（旧版任务） | 合并 `ui_messages.json` 中同一请求的开始 / 结束记录；验证机器没有可用数据，仅完成样本验证 |
 | WorkBuddy、Pi、Gemini CLI、OpenCode、Antigravity、Antigravity IDE | 已实现并通过与 macOS 的匿名样本对照；验证机器没有可用数据，尚未完成真实数据源系统验证 |
 
-十个采集器均可配置来源路径和启用开关。缺失的数据源或计数显示为不可用；读取本机记录无需 API Key。DSH 使用一个权威账本，支持排除记录和调低计数的账务修正，不会把会话日志再次叠加到账本总数。
+十二个采集器均可配置来源路径和启用开关。缺失的数据源或计数显示为不可用；读取本机记录无需 API Key。DSH 使用一个权威账本，支持排除记录和调低计数的账务修正，不会把会话日志再次叠加到账本总数。
 
 Windows 的“自动勘测 Token 来源”已接入，可保存只含元信息的报告，重载后仍能查看。历史覆盖按已保存记录数和日期范围显示；本次新增 0 条不再误显示为历史记录 0 条。
 
 手动同步结束后显示“同步已完成”，没有新增记录也会正确结束。首次导入大量历史记录可能需要较长时间。
+
+Gemini 记录现已保留真实来源行号和字节位置，共享游标格式为 `gemini-session-v2.0.1`，已有来源文件按新格式重放。托盘应用中的 Tibo Codex Monitor 链接交由系统默认浏览器打开；仅固定 HTTPS 资源会交给系统浏览器，失败时会显示提示。
 
 ## 数据与卸载
 
@@ -41,10 +45,10 @@ Windows 的“自动勘测 Token 来源”已接入，可保存只含元信息�
 安装包**未签名**。SHA256 用于文件完整性校验，不代表发布者身份认证。
 
 ```powershell
-Get-FileHash .\AgentBarBar-1.0.4-Windows-x64-Setup.exe -Algorithm SHA256
+Get-FileHash .\AgentBarBar-1.0.6-Windows-x64-Setup.exe -Algorithm SHA256
 ```
 
-SHA256：`994781b4c446050704a69d31dcf21f7e11f30cd66d2bb917ec326b3c98a6d433`。
+SHA256：`da17eac90175b9387a370ae35e19b56a8fc0cc4b50df9aa2b0fe163a15869808`。
 
 暂不提供 Windows 登录自动启动和自动更新。长期运行、睡眠恢复、Explorer 恢复、物理多屏 / 混合 DPI 和完整升级回滚验证尚未完成；后续更新请从 GitHub 手动下载。
 
@@ -52,4 +56,4 @@ SHA256：`994781b4c446050704a69d31dcf21f7e11f30cd66d2bb917ec326b3c98a6d433`。
 
 ## 截图来源
 
-README 的 Windows 图片来自此前的真实应用截图。双语安装图展示此前 1.0.4 安装包的布局，本次更新保留该布局；它不是更新后程序的新截图。
+README 的 Windows 图片来自此前的真实应用截图。双语安装图展示 1.0.4 安装包的布局，1.0.6 安装包保留该布局；它不是更新后程序的新截图。
