@@ -2,7 +2,7 @@
 <h1 align="center">AgentBarBar</h1>
 <p align="center">让 AI 用量一目了然。</p>
 <p align="center"><a href="README.zh-CN.md">简体中文</a> · <a href="README.md">English</a></p>
-<p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><strong>下载 macOS 版 →</strong></a></p>
+<p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><strong>下载 macOS 版 →</strong></a> · <a href="https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Preview-Setup.exe"><strong>Windows 测试版 →</strong></a></p>
 <p align="center">1.0.4 · Apple Silicon · macOS 14+ · 中文 / English</p>
 
 <p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><img src="assets/poster-zh.png" width="680" alt="AgentBarBar 推广海报"></a></p>
@@ -15,7 +15,7 @@
 
 ## 用了多少，打开就知道
 
-AgentBarBar 是一个 macOS 菜单栏 AI 用量工具。今天用了多少 Token、最近趋势如何、主要用在哪些 Agent，打开就能看到。
+AgentBarBar 是一个本地 AI 用量工具，可从 macOS 菜单栏或 Windows 系统托盘访问。Windows 当前提供测试版。今天用了多少 Token、最近趋势如何、主要用在哪些 Agent，打开就能看到。
 
 - **随手看用量** — 菜单栏显示今日 Token，点击查看主要 Agent。
 - **看清趋势** — 切换今天、7 天、30 天和全部时间。
@@ -43,7 +43,7 @@ AgentBarBar 是一个 macOS 菜单栏 AI 用量工具。今天用了多少 Token
 ![主题与明暗模式设置](assets/appearance-zh.png)
 <p align="center"><sub>设置 → 外观 · 演示数据</sub></p>
 
-## 安装
+## macOS 安装
 
 1. [下载最新 DMG](https://github.com/y2zyyr/AgentBarBar/releases/latest)，将 App 拖到 **Applications 应用程序**。
 2. 打开 App，点击菜单栏图标即可查看用量。
@@ -52,15 +52,35 @@ AgentBarBar 是一个 macOS 菜单栏 AI 用量工具。今天用了多少 Token
 
 若 macOS 提示无法验证开发者：尝试打开后，进入 **系统设置 → 隐私与安全性 → 仍要打开**。当前下载包未经过 Apple 公证。
 
+## Windows 1.0.4 测试版
+
+[下载 Windows x64 EXE 安装包](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Preview-Setup.exe) · [Windows 安装说明与已知限制](WINDOWS.zh-CN.md)
+
+真正运行在系统托盘的桌面应用：点击查看用量 Popup，再打开共享仪表盘。支持今天、7 天、30 天、全部时间、Agent / 模型统计和请求明细；保留松绿、纸感、深海、极简四主题，浅色 / 深色 / 跟随系统，以及中文 / English。
+
+- **Windows 已验证：** Codex、Claude Code 的本机用量采集。
+- **部分验证：** Kimi CLI 历史用量，实时 Token 统计尚未完整验证。
+- **Windows 尚未确认：** macOS 列表中的另外七个 Agent。
+- **测试版限制：** 未签名；长期运行、睡眠恢复、升级和最终卸载验收尚未全部完成。暂不提供 Windows 自动启动或自动更新。
+
+已在 Windows 11 x64 + WebView2 测试。安装后的应用运行不需要 Rust、Node.js 或开发工具。覆盖安装前，请先从托盘菜单退出 AgentBarBar。
+
+![Windows 仪表盘](assets/windows/dashboard-zh.png)
+<p align="center"><img src="assets/windows/popup-zh-light.png" width="320" alt="Windows 托盘用量面板"></p>
+<p align="center"><sub>打包前验证时的真实 Windows 应用截图，仅展示用量统计，不含对话正文；不是最终重打包安装包的截图。</sub></p>
+
+![Windows 安装欢迎界面](assets/windows/install-zh.png)
+<p align="center"><sub>真实 1.0.4 预览安装欢迎界面。当前重打包版本包含后续托盘与安装安全修复。</sub></p>
+
 ## 支持哪些 Agent？
 
-支持读取 Codex、Claude Code、DeepSeek Harness、WorkBuddy、Pi、Kimi CLI、Gemini CLI、OpenCode、Antigravity 和 Antigravity IDE 的本机用量记录。
+macOS 支持读取 Codex、Claude Code、DeepSeek Harness、WorkBuddy、Pi、Kimi CLI、Gemini CLI、OpenCode、Antigravity 和 Antigravity IDE 的本机用量记录。
 
 实际可显示的分项取决于 Agent 提供的记录；已有记录但缺少计数时，会显示为不可用。首次读取较多历史记录可能需要几分钟。
 
 ## 更新与反馈
 
-App 会从 GitHub 检查新版本，发现更新后提示下载。安装包保存到 **“下载”文件夹** 并打开，将 App 拖入 **“应用程序”** 即可自行覆盖安装。可在原生设置中关闭自动检查。
+macOS App 会从 GitHub 检查新版本，发现更新后提示下载。安装包保存到 **“下载”文件夹** 并打开，将 App 拖入 **“应用程序”** 即可自行覆盖安装。可在原生设置中关闭自动检查。
 
 仪表盘底部提供 [Tibo Codex Monitor](https://tibo.modelyard.dev) 入口，查看 Codex 额度重置与政策更新；该网站是独立监测站点。
 
@@ -68,7 +88,7 @@ App 会从 GitHub 检查新版本，发现更新后提示下载。安装包保�
 - [版本更新](https://github.com/y2zyyr/AgentBarBar/releases)
 - [报告问题 / 建议功能](https://github.com/y2zyyr/AgentBarBar/issues)
 
-反馈时请说明应用版本、macOS 版本和使用的 Agent；无需提供聊天记录或账号凭证。
+反馈时请说明应用版本、操作系统版本和使用的 Agent；无需提供聊天记录或账号凭证。
 
 ## 推广海报
 

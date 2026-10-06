@@ -5,7 +5,7 @@ title: ''
 labels: bug
 ---
 App version / 应用版本:
-macOS version / 系统版本:
+OS and version (macOS / Windows) / 系统及版本:
 Agent:
 
 What happened / 问题描述:
