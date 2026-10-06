@@ -7,7 +7,7 @@
 ## 安装和使用
 
 1. 下载 1.0.4 Release 中的 Windows x64 EXE。已测试 Windows 11 x64；ARM64 和较旧 Windows 尚未确认。
-2. 双击安装包，选择中文或 English。安装到当前用户目录。需要 WebView2；安装包配置为缺失时下载 Evergreen 引导程序，此时可能需要网络。Runtime 缺失 / 损坏场景尚未完整验证。
+2. 双击安装包，安装标题、说明与按钮在同一页面同时显示中文和 English。安装到当前用户目录。需要 WebView2；安装包配置为缺失时下载 Evergreen 引导程序，此时可能需要网络。Runtime 缺失 / 损坏场景尚未完整验证。
 3. 从桌面或开始菜单启动，在任务栏通知区域（包括隐藏图标）找到 AgentBarBar。
 4. 点击图标查看今日用量，再点击“打开仪表盘”。关闭仪表盘仅隐藏窗口；真正退出请使用托盘菜单“退出”。
 5. 在仪表盘设置中切换语言、主题和明暗模式。
@@ -41,7 +41,7 @@
 Get-FileHash .\AgentBarBar-1.0.4-Windows-x64-Preview-Setup.exe -Algorithm SHA256
 ```
 
-SHA256：`e45c2c948ad7977af8d90f0d82a845b00091f1cd37c6d57ae80dfa62eaba47a6`。
+SHA256：`b2fb434900ec1afe86b6c54021b49748996716af4d1ab0db45511486b8dbfce5`。
 
 暂不提供 Windows 自动更新与登录自动启动；后续测试包需手动下载。最终候选 24 小时耐久、睡眠恢复、Explorer 恢复、物理多屏 / 混合 DPI、完整升级回滚等验收尚未完成，不能据此宣称与 macOS 完全对等。
 
@@ -49,4 +49,4 @@ SHA256：`e45c2c948ad7977af8d90f0d82a845b00091f1cd37c6d57ae80dfa62eaba47a6`。
 
 ## 截图来源
 
-README 使用打包前验证时的真实 Windows 界面截图。安装图来自较早的 1.0.4 欢迎界面；当前重打包版本包含后续安全修复。截图不是 AI 生成界面或静态 Demo。
+README 使用打包前验证时的真实 Windows 界面截图。安装图为当前重打包 1.0.4 的同页中英双语欢迎界面，来自真实 Windows 安装程序窗口。截图不是 AI 生成界面或静态 Demo。

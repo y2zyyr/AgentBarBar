@@ -70,7 +70,7 @@ Tested on Windows 11 x64 with WebView2. No Rust, Node.js or development tools ar
 <p align="center"><sub>Actual Windows app captures from pre-packaging validation; usage totals only, no conversation content. These are not screenshots of the final rebuilt installer.</sub></p>
 
 ![Windows installer welcome](assets/windows/install-zh.png)
-<p align="center"><sub>Actual 1.0.4 preview installer welcome screen. The current rebuilt package includes subsequent tray and installation-safety fixes.</sub></p>
+<p align="center"><sub>Actual 1.0.4 preview installer: Chinese and English displayed together on the same page.</sub></p>
 
 ## Supported Agents
 

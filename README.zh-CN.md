@@ -70,7 +70,7 @@ AgentBarBar 是一个本地 AI 用量工具，可从 macOS 菜单栏或 Windows 
 <p align="center"><sub>打包前验证时的真实 Windows 应用截图，仅展示用量统计，不含对话正文；不是最终重打包安装包的截图。</sub></p>
 
 ![Windows 安装欢迎界面](assets/windows/install-zh.png)
-<p align="center"><sub>真实 1.0.4 预览安装欢迎界面。当前重打包版本包含后续托盘与安装安全修复。</sub></p>
+<p align="center"><sub>真实 1.0.4 安装界面：标题、说明和按钮在同一页面同时显示中英文。</sub></p>
 
 ## 支持哪些 Agent？
 

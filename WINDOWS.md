@@ -7,7 +7,7 @@ This is a public preview, not a completed Windows stable release. The product ve
 ## Install and use
 
 1. Download the x64 EXE from the 1.0.4 release. Windows 11 x64 is the tested platform; ARM64 and older Windows versions are unverified.
-2. Double-click the installer and select Chinese or English. It installs for the current user. WebView2 is required; the installer is configured to download its Evergreen bootstrapper if the runtime is missing. Missing/broken-runtime cases are not yet fully validated and may require network access.
+2. Double-click the installer and read Chinese and English together on each page. It installs for the current user. WebView2 is required; the installer is configured to download its Evergreen bootstrapper if the runtime is missing. Missing/broken-runtime cases are not yet fully validated and may require network access.
 3. Open AgentBarBar from the desktop or Start menu. Find its icon in the notification area (including hidden icons).
 4. Click the icon for today’s usage, then **Open Dashboard** for full statistics. Closing the dashboard hides it; use **Quit** in the tray menu to exit the application.
 5. Choose language, theme and light/dark/system mode in Dashboard Settings.
@@ -41,7 +41,7 @@ This build is **unsigned** and may show a Windows/SmartScreen publisher warning.
 Get-FileHash .\AgentBarBar-1.0.4-Windows-x64-Preview-Setup.exe -Algorithm SHA256
 ```
 
-Expected SHA256: `e45c2c948ad7977af8d90f0d82a845b00091f1cd37c6d57ae80dfa62eaba47a6`.
+Expected SHA256: `b2fb434900ec1afe86b6c54021b49748996716af4d1ab0db45511486b8dbfce5`.
 
 Windows automatic updates and login autostart are not implemented. Download future preview builds manually. Final 24-hour candidate endurance, sleep/wake, Explorer recovery, physical multi-monitor/mixed-DPI and full upgrade/rollback gates are incomplete; the preview is not a claim of full macOS parity.
 
@@ -49,4 +49,4 @@ No telemetry or conversation-body uploads are added. Statistics are read locally
 
 ## Screenshots
 
-README images are real Windows captures from pre-packaging validation. The installer image is the earlier 1.0.4 welcome screen; the current rebuilt 1.0.4 contains subsequent safety fixes. No generated UI mockups are presented as running-app evidence.
+README images are real Windows captures from pre-packaging validation. The installer image is the current rebuilt 1.0.4 inline bilingual welcome screen, captured from its actual Windows installer window. No generated UI mockups are presented as running-app evidence.
