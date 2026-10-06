@@ -1,8 +1,8 @@
-# AgentBarBar for Windows — 1.0.4
+# AgentBarBar for Windows — 1.0.6
 
-[简体中文](WINDOWS.zh-CN.md) · [Download installer](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Setup.exe)
+[简体中文](WINDOWS.zh-CN.md) · [Download installer](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.6/AgentBarBar-1.0.6-Windows-x64-Setup.exe)
 
-Windows x64 system-tray application, version 1.0.4. Installer titles, instructions and buttons display Chinese and English together on each page.
+Windows x64 system-tray application, version 1.0.6 (build 38). Installer titles, instructions and buttons display Chinese and English together on each page.
 
 ## Install and use
 
@@ -22,13 +22,17 @@ No Rust, Cargo, Node.js or Visual Studio is required at runtime.
 | Claude Code | Real Windows source collection verified |
 | Kimi CLI | Real Windows historical records verified; live accounting remains partial |
 | DeepSeek Harness | Real Windows canonical SQLite ledger independently reconciled; replay does not double-count |
+| Qwen Code | Versioned monthly Token ledger parsed and deduplicated by ledger record ID; no usable source on the validation host, fixture validation only |
+| Cline (legacy tasks) | Merges per-request start/finish records from `ui_messages.json`; no usable source on the validation host, fixture validation only |
 | WorkBuddy, Pi, Gemini CLI, OpenCode, Antigravity, Antigravity IDE | Implemented and matched against macOS anonymous fixtures; no usable source on the validation host for real-source system validation |
 
-All ten collectors support source-path overrides and enable/disable switches. Missing sources and counters remain unavailable. No API key is required to read local usage records. DSH adopts one authoritative ledger, handles exclusions/downward corrections and does not add session-log counts to ledger totals.
+All twelve collectors support source-path overrides and enable/disable switches. Missing sources and counters remain unavailable. No API key is required to read local usage records. DSH adopts one authoritative ledger, handles exclusions/downward corrections and does not add session-log counts to ledger totals.
 
 **Find Token sources** now works on Windows, saves metadata-only survey reports and restores them after reload. History coverage uses retained records and their date range; zero new rows in the last scan do not mean zero history.
 
 Manual sync now changes its start notice to **Sync completed**, even when no new records are found. First import of a large history can take time.
+
+Gemini records keep their real source line and byte positions, and the shared cursor format is now `gemini-session-v2.0.1`; existing source files are replayed under the new format. In the tray app, the Tibo Codex Monitor link is opened by the system default browser; only fixed HTTPS resources are handed over, and a message is shown when that fails.
 
 ## Data and removal
 
@@ -41,10 +45,10 @@ The installer refuses to overwrite a running installed application. Normal unins
 The installer is **unsigned**. A SHA256 checksum verifies file integrity, not publisher identity.
 
 ```powershell
-Get-FileHash .\AgentBarBar-1.0.4-Windows-x64-Setup.exe -Algorithm SHA256
+Get-FileHash .\AgentBarBar-1.0.6-Windows-x64-Setup.exe -Algorithm SHA256
 ```
 
-Expected SHA256: `994781b4c446050704a69d31dcf21f7e11f30cd66d2bb917ec326b3c98a6d433`.
+Expected SHA256: `da17eac90175b9387a370ae35e19b56a8fc0cc4b50df9aa2b0fe163a15869808`.
 
 Windows login autostart and automatic updates are not implemented. Long-run endurance, sleep/wake, Explorer recovery, physical mixed-DPI/multi-monitor and full upgrade/rollback validation remain incomplete. Download updates from GitHub manually.
 
@@ -52,4 +56,4 @@ Statistics stay local; conversation bodies and telemetry are not uploaded. Feedb
 
 ## Screenshots
 
-README Windows screenshots are earlier real application captures. The bilingual installer image shows the preceding 1.0.4 package's layout, which this update retains; it is not a new capture of the updated binary.
+README Windows screenshots are earlier real application captures. The bilingual installer image shows the 1.0.4 package's layout, which the 1.0.6 package retains; it is not a new capture of the updated binary.
