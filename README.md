@@ -2,7 +2,7 @@
 <h1 align="center">AgentBarBar</h1>
 <p align="center">Your AI usage, at a glance.</p>
 <p align="center"><a href="README.zh-CN.md">简体中文</a> · <a href="README.md">English</a></p>
-<p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><strong>Download for macOS →</strong></a> · <a href="https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Preview-Setup.exe"><strong>Windows Preview →</strong></a></p>
+<p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><strong>Download for macOS →</strong></a> · <a href="https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Setup.exe"><strong>Download for Windows →</strong></a></p>
 <p align="center">1.0.4 · Apple Silicon · macOS 14+ · 中文 / English</p>
 
 <p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><img src="assets/poster-en.png" width="680" alt="AgentBarBar promotional poster"></a></p>
@@ -15,7 +15,7 @@
 
 ## Know what you use
 
-AgentBarBar tracks local AI Agent usage from the macOS menu bar or Windows system tray. The Windows build is currently a preview. See today's tokens, recent trends and usage by Agent in one place.
+AgentBarBar tracks local AI Agent usage from the macOS menu bar or Windows system tray. See today's tokens, recent trends and usage by Agent in one place.
 
 - **A quick glance** — Today's token total in the menu bar, with your leading Agents one click away.
 - **Clear trends** — Switch between today, 7 days, 30 days and all time.
@@ -52,16 +52,17 @@ Choose **Forest, Paper, Ocean or Mono** in **Dashboard Settings → Appearance**
 
 If macOS cannot verify the developer, try opening the app, then go to **System Settings → Privacy & Security → Open Anyway**. The current download is not notarized by Apple.
 
-## Windows 1.0.4 Preview
+## Windows 1.0.4
 
-[Download the Windows x64 installer](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Preview-Setup.exe) · [Windows installation guide and limitations](WINDOWS.md)
+[Download the Windows x64 installer](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Setup.exe) · [Windows installation guide and limitations](WINDOWS.md)
 
 A real system-tray app with a quick usage popup and the shared dashboard: Today, 7 days, 30 days, all time, Agent/model breakdowns and request details. Forest, Paper, Ocean and Mono; light/dark/system modes; Chinese and English.
 
-- **Verified on Windows:** Codex and Claude Code local usage collection.
-- **Partial:** Kimi CLI historical usage; live accounting is not fully verified.
-- **Unverified on Windows:** the other seven Agents listed for macOS.
-- **Preview status:** unsigned; long-run, sleep/wake, upgrade and final uninstall validation remain incomplete. No Windows autostart or automatic updater yet.
+- **Ten collectors:** Codex, Claude Code, Kimi CLI, DeepSeek Harness, WorkBuddy, Pi, Gemini CLI, OpenCode, Antigravity and Antigravity IDE.
+- **Validated with real Windows sources:** Codex, Claude Code, Kimi historical records and DeepSeek Harness. DSH uses its canonical SQLite ledger, with aggregate reconciliation and replay deduplication.
+- **Fixture validation:** all ten collectors match the macOS reference for request identities and token values/states. Agents without usable records on the validation host have not received real-source system validation.
+- **Sync feedback:** completion replaces the “Sync started” notice, including a sync with no new records.
+- **Installation:** Chinese and English appear together on each installer page. The package is unsigned; Windows autostart and automatic updates are not implemented.
 
 Tested on Windows 11 x64 with WebView2. No Rust, Node.js or development tools are required to run the installed app. Quit AgentBarBar from its tray menu before installing over an existing copy.
 
@@ -70,11 +71,11 @@ Tested on Windows 11 x64 with WebView2. No Rust, Node.js or development tools ar
 <p align="center"><sub>Actual Windows app captures from pre-packaging validation; usage totals only, no conversation content. These are not screenshots of the final rebuilt installer.</sub></p>
 
 ![Windows installer welcome](assets/windows/install-zh.png)
-<p align="center"><sub>Actual 1.0.4 preview installer: Chinese and English displayed together on the same page.</sub></p>
+<p align="center"><sub>Actual bilingual 1.0.4 installer capture from the preceding package; the updated package preserves this layout.</sub></p>
 
 ## Supported Agents
 
-On macOS, reads local usage records from Codex, Claude Code, DeepSeek Harness, WorkBuddy, Pi, Kimi CLI, Gemini CLI, OpenCode, Antigravity and Antigravity IDE.
+On macOS and Windows, reads local usage records from Codex, Claude Code, DeepSeek Harness, WorkBuddy, Pi, Kimi CLI, Gemini CLI, OpenCode, Antigravity and Antigravity IDE.
 
 Available metrics depend on the records an Agent provides. Missing counters remain unavailable. Importing a large history for the first time may take a few minutes.
 

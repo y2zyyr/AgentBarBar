@@ -1,52 +1,53 @@
-# AgentBarBar for Windows — 1.0.4 Preview
+# AgentBarBar for Windows — 1.0.4
 
-[简体中文](WINDOWS.zh-CN.md) · [Download installer](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Preview-Setup.exe)
+[简体中文](WINDOWS.zh-CN.md) · [Download installer](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Setup.exe)
 
-This is a public preview, not a completed Windows stable release. The product version matches macOS 1.0.4 (build 34); Windows compatibility and release validation have separate status.
+Windows x64 system-tray application, version 1.0.4. Installer titles, instructions and buttons display Chinese and English together on each page.
 
 ## Install and use
 
-1. Download the x64 EXE from the 1.0.4 release. Windows 11 x64 is the tested platform; ARM64 and older Windows versions are unverified.
-2. Double-click the installer and read Chinese and English together on each page. It installs for the current user. WebView2 is required; the installer is configured to download its Evergreen bootstrapper if the runtime is missing. Missing/broken-runtime cases are not yet fully validated and may require network access.
-3. Open AgentBarBar from the desktop or Start menu. Find its icon in the notification area (including hidden icons).
-4. Click the icon for today’s usage, then **Open Dashboard** for full statistics. Closing the dashboard hides it; use **Quit** in the tray menu to exit the application.
-5. Choose language, theme and light/dark/system mode in Dashboard Settings.
+1. Quit the current AgentBarBar from its tray menu before reinstalling.
+2. Download and run the x64 installer. It installs for your Windows account; normal use requires no administrator privileges. Windows 11 x64 is the validated platform; ARM64 and older versions are unverified.
+3. WebView2 is required. The installer is configured to download its Evergreen bootstrapper if needed; missing/broken-runtime scenarios remain incompletely validated and can require network access.
+4. Open AgentBarBar from the desktop or Start menu. Click its notification-area icon for today's usage and **Open Dashboard** for full statistics.
+5. Choose Chinese/English, Forest/Paper/Ocean/Mono and light/dark/system modes in Dashboard Settings. Closing the dashboard hides it; **Quit** in the tray menu exits the application.
 
-No Rust, Cargo, Node.js or Visual Studio is required at runtime. Normal application use does not require administrator privileges.
+No Rust, Cargo, Node.js or Visual Studio is required at runtime.
 
-## Supported Windows sources
+## Collectors
 
-| Agent | Windows status |
+| Agent | Validation |
 |---|---|
-| Codex | Real-source collection and system pipeline verified |
-| Claude Code | Real-source collection and system pipeline verified |
-| Kimi CLI | Historical ingestion verified; live accounting partial |
-| DeepSeek Harness, WorkBuddy, Pi, Gemini CLI, OpenCode, Antigravity, Antigravity IDE | Unverified; not claimed as supported by this preview |
+| Codex | Real Windows source collection verified |
+| Claude Code | Real Windows source collection verified |
+| Kimi CLI | Real Windows historical records verified; live accounting remains partial |
+| DeepSeek Harness | Real Windows canonical SQLite ledger independently reconciled; replay does not double-count |
+| WorkBuddy, Pi, Gemini CLI, OpenCode, Antigravity, Antigravity IDE | Implemented and matched against macOS anonymous fixtures; no usable source on the validation host for real-source system validation |
 
-The screenshot totals depend on captured local records. Missing token fields remain unavailable; no API key is needed to read supported local usage logs.
+All ten collectors support source-path overrides and enable/disable switches. Missing sources and counters remain unavailable. No API key is required to read local usage records. DSH adopts one authoritative ledger, handles exclusions/downward corrections and does not add session-log counts to ledger totals.
 
-## Data, reinstall and removal
+Manual sync now changes its start notice to **Sync completed**, even when no new records are found. First import of a large history can take time.
 
-Program files default to `%LOCALAPPDATA%\Programs\AgentBarBar`. Runtime data is separate under `%LOCALAPPDATA%\AgentBarBar`; the database currently uses `database\usage.sqlite`.
+## Data and removal
 
-Quit from the tray before reinstalling. The installer refuses to overwrite a running installed application instead of force-terminating its collector. Do not downgrade an existing internal 1.0.5/1.0.6 installation without a data backup; that downgrade path is unverified.
+Program files default to `%LOCALAPPDATA%\Programs\AgentBarBar`; runtime data remains separate under `%LOCALAPPDATA%\AgentBarBar`, with `database\usage.sqlite`.
 
-Use Windows **Installed apps → AgentBarBar → Uninstall**. Normal uninstall is designed to retain usage data. Only choose the optional data-removal checkbox if you intend to delete it. Default data preservation was verified with the preceding internal 1.0.5 build; final rebuilt 1.0.4 uninstall and optional deletion remain pending. Back up important data before trying the preview.
+The installer refuses to overwrite a running installed application. Normal uninstall is designed to preserve usage data; the optional data-removal checkbox deletes it only when selected. The existing data-protection logic is retained; final updated-package uninstall/deletion and full upgrade/rollback validation remain incomplete. Earlier internal 1.0.5/1.0.6 downgrades remain unverified.
 
-## Integrity and known limits
+## Integrity and current limitations
 
-This build is **unsigned** and may show a Windows/SmartScreen publisher warning. Signing and reputation validation remain pending. Verify the SHA256 before use; a checksum provides integrity, not publisher authentication.
+The installer is **unsigned**. A SHA256 checksum verifies file integrity, not publisher identity.
 
 ```powershell
-Get-FileHash .\AgentBarBar-1.0.4-Windows-x64-Preview-Setup.exe -Algorithm SHA256
+Get-FileHash .\AgentBarBar-1.0.4-Windows-x64-Setup.exe -Algorithm SHA256
 ```
 
-Expected SHA256: `b2fb434900ec1afe86b6c54021b49748996716af4d1ab0db45511486b8dbfce5`.
+Expected SHA256: `b88b30a9100e2b1311b97c96ce042e7947c763deaf9869825b39f173f5f31d08`.
 
-Windows automatic updates and login autostart are not implemented. Download future preview builds manually. Final 24-hour candidate endurance, sleep/wake, Explorer recovery, physical multi-monitor/mixed-DPI and full upgrade/rollback gates are incomplete; the preview is not a claim of full macOS parity.
+Windows login autostart and automatic updates are not implemented. Long-run endurance, sleep/wake, Explorer recovery, physical mixed-DPI/multi-monitor and full upgrade/rollback validation remain incomplete. Download updates from GitHub manually.
 
-No telemetry or conversation-body uploads are added. Statistics are read locally, and the app database does not store chat bodies. Feedback should include app/OS version and Agent name, not private logs or credentials.
+Statistics stay local; conversation bodies and telemetry are not uploaded. Feedback needs app/OS version and Agent name, not private logs or credentials.
 
 ## Screenshots
 
-README images are real Windows captures from pre-packaging validation. The installer image is the current rebuilt 1.0.4 inline bilingual welcome screen, captured from its actual Windows installer window. No generated UI mockups are presented as running-app evidence.
+README Windows screenshots are earlier real application captures. The bilingual installer image shows the preceding 1.0.4 package's layout, which this update retains; it is not a new capture of the updated binary.
