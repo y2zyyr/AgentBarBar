@@ -61,6 +61,7 @@ AgentBarBar 是一个本地 AI 用量工具，可从 macOS 菜单栏或 Windows 
 - **已接入十个采集器：** Codex、Claude Code、Kimi CLI、DeepSeek Harness、WorkBuddy、Pi、Gemini CLI、OpenCode、Antigravity 和 Antigravity IDE。
 - **Windows 真实数据验证：** Codex、Claude Code、Kimi 历史记录和 DSH。DSH 读取自己的 SQLite 用量账本，校验汇总，重复同步不会重复计数。
 - **样本验证：** 十个采集器的请求身份、Token 数值及缺失字段状态与 macOS 参考一致。验证机器上没有可用记录的 Agent 尚未完成真实数据源系统验证。
+- **自动勘测：** 查找候选 Token 字段、采集所选 Agent 并保存报告；重载后仍能查看。历史覆盖显示已保存的记录数和日期，重复同步不会误显示为 0。
 - **同步提示修复：** 任务结束后显示“同步已完成”，没有新增记录的同步也会正确结束。
 - **安装：** 每一页同时显示中英文。安装包未签名，暂不提供 Windows 自动启动和自动更新。
 

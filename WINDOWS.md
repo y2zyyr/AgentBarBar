@@ -26,6 +26,8 @@ No Rust, Cargo, Node.js or Visual Studio is required at runtime.
 
 All ten collectors support source-path overrides and enable/disable switches. Missing sources and counters remain unavailable. No API key is required to read local usage records. DSH adopts one authoritative ledger, handles exclusions/downward corrections and does not add session-log counts to ledger totals.
 
+**Find Token sources** now works on Windows, saves metadata-only survey reports and restores them after reload. History coverage uses retained records and their date range; zero new rows in the last scan do not mean zero history.
+
 Manual sync now changes its start notice to **Sync completed**, even when no new records are found. First import of a large history can take time.
 
 ## Data and removal
@@ -42,7 +44,7 @@ The installer is **unsigned**. A SHA256 checksum verifies file integrity, not pu
 Get-FileHash .\AgentBarBar-1.0.4-Windows-x64-Setup.exe -Algorithm SHA256
 ```
 
-Expected SHA256: `b88b30a9100e2b1311b97c96ce042e7947c763deaf9869825b39f173f5f31d08`.
+Expected SHA256: `994781b4c446050704a69d31dcf21f7e11f30cd66d2bb917ec326b3c98a6d433`.
 
 Windows login autostart and automatic updates are not implemented. Long-run endurance, sleep/wake, Explorer recovery, physical mixed-DPI/multi-monitor and full upgrade/rollback validation remain incomplete. Download updates from GitHub manually.
 

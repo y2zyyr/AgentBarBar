@@ -61,6 +61,7 @@ A real system-tray app with a quick usage popup and the shared dashboard: Today,
 - **Ten collectors:** Codex, Claude Code, Kimi CLI, DeepSeek Harness, WorkBuddy, Pi, Gemini CLI, OpenCode, Antigravity and Antigravity IDE.
 - **Validated with real Windows sources:** Codex, Claude Code, Kimi historical records and DeepSeek Harness. DSH uses its canonical SQLite ledger, with aggregate reconciliation and replay deduplication.
 - **Fixture validation:** all ten collectors match the macOS reference for request identities and token values/states. Agents without usable records on the validation host have not received real-source system validation.
+- **Source survey:** finds candidate Token fields, reconciles the selected collector and restores saved reports after reload. History coverage shows retained record counts and dates, including unchanged scans.
 - **Sync feedback:** completion replaces the “Sync started” notice, including a sync with no new records.
 - **Installation:** Chinese and English appear together on each installer page. The package is unsigned; Windows autostart and automatic updates are not implemented.
 
