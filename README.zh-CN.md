@@ -2,8 +2,8 @@
 <h1 align="center">AgentBarBar</h1>
 <p align="center">让 AI 用量一目了然。</p>
 <p align="center"><a href="README.zh-CN.md">简体中文</a> · <a href="README.md">English</a></p>
-<p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><strong>下载 macOS 版 →</strong></a> · <a href="https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Setup.exe"><strong>下载 Windows 版 →</strong></a></p>
-<p align="center">1.0.4 · Apple Silicon · macOS 14+ · 中文 / English</p>
+<p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><strong>下载 macOS 版 →</strong></a> · <a href="https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.6/AgentBarBar-1.0.6-Windows-x64-Setup.exe"><strong>下载 Windows 版 →</strong></a></p>
+<p align="center">1.0.6 · Apple Silicon · macOS 14+ · 中文 / English</p>
 
 <p align="center"><a href="https://github.com/y2zyyr/AgentBarBar/releases/latest"><img src="assets/poster-zh.png" width="680" alt="AgentBarBar 推广海报"></a></p>
 
@@ -52,18 +52,20 @@ AgentBarBar 是一个本地 AI 用量工具，可从 macOS 菜单栏或 Windows 
 
 若 macOS 提示无法验证开发者：尝试打开后，进入 **系统设置 → 隐私与安全性 → 仍要打开**。当前下载包未经过 Apple 公证。
 
-## Windows 1.0.4
+## Windows 1.0.6
 
-[下载 Windows x64 EXE 安装包](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.4/AgentBarBar-1.0.4-Windows-x64-Setup.exe) · [Windows 安装说明与已知限制](WINDOWS.zh-CN.md)
+[下载 Windows x64 EXE 安装包](https://github.com/y2zyyr/AgentBarBar/releases/download/v1.0.6/AgentBarBar-1.0.6-Windows-x64-Setup.exe) · [Windows 安装说明与已知限制](WINDOWS.zh-CN.md)
 
 真正运行在系统托盘的桌面应用：点击查看用量 Popup，再打开共享仪表盘。支持今天、7 天、30 天、全部时间、Agent / 模型统计和请求明细；保留松绿、纸感、深海、极简四主题，浅色 / 深色 / 跟随系统，以及中文 / English。
 
-- **已接入十个采集器：** Codex、Claude Code、Kimi CLI、DeepSeek Harness、WorkBuddy、Pi、Gemini CLI、OpenCode、Antigravity 和 Antigravity IDE。
+- **已接入十二个采集器：** Codex、Claude Code、Kimi CLI、DeepSeek Harness、WorkBuddy、Pi、Gemini CLI、OpenCode、Antigravity、Antigravity IDE、Qwen Code 和 Cline 旧版任务；Windows 与 macOS 的适配器集合现已一致。
 - **Windows 真实数据验证：** Codex、Claude Code、Kimi 历史记录和 DSH。DSH 读取自己的 SQLite 用量账本，校验汇总，重复同步不会重复计数。
-- **样本验证：** 十个采集器的请求身份、Token 数值及缺失字段状态与 macOS 参考一致。验证机器上没有可用记录的 Agent 尚未完成真实数据源系统验证。
+- **样本验证：** 十二个采集器的请求身份、Token 数值及缺失字段状态与 macOS 参考一致。验证机器上没有可用记录的 Agent 尚未完成真实数据源系统验证。
 - **自动勘测：** 查找候选 Token 字段、采集所选 Agent 并保存报告；重载后仍能查看。历史覆盖显示已保存的记录数和日期，重复同步不会误显示为 0。
+- **来源追溯：** Gemini 记录保留真实来源行号和字节位置，共享游标格式升级为 `gemini-session-v2.0.1`；缺失分项保持不可用，不再以 0 代替。
 - **同步提示修复：** 任务结束后显示“同步已完成”，没有新增记录的同步也会正确结束。
-- **安装：** 每一页同时显示中英文。安装包未签名，暂不提供 Windows 自动启动和自动更新。
+- **外链处理：** Tibo Codex Monitor 链接交给原生窗口动作，仅固定 HTTPS 资源使用系统默认浏览器打开，失败时显示提示。
+- **安装：** 每一页同时显示中英文。安装包未签名，暂不提供 Windows 自动启动和自动更新；支持同应用版本的不同构建号升级，拒绝构建号回退，并备份旧应用。
 
 已在 Windows 11 x64 + WebView2 测试。安装后的应用运行不需要 Rust、Node.js 或开发工具。覆盖安装前，请先从托盘菜单退出 AgentBarBar。
 
@@ -72,11 +74,11 @@ AgentBarBar 是一个本地 AI 用量工具，可从 macOS 菜单栏或 Windows 
 <p align="center"><sub>打包前验证时的真实 Windows 应用截图，仅展示用量统计，不含对话正文；不是最终重打包安装包的截图。</sub></p>
 
 ![Windows 安装欢迎界面](assets/windows/install-zh.png)
-<p align="center"><sub>此前 1.0.4 安装包的真实双语界面截图；更新后的安装包保留此布局。</sub></p>
+<p align="center"><sub>此前 1.0.4 安装包的真实双语界面截图；1.0.6 安装包保留此布局。</sub></p>
 
 ## 支持哪些 Agent？
 
-macOS 和 Windows 支持读取 Codex、Claude Code、DeepSeek Harness、WorkBuddy、Pi、Kimi CLI、Gemini CLI、OpenCode、Antigravity 和 Antigravity IDE 的本机用量记录。
+macOS 和 Windows 支持读取 Codex、Claude Code、DeepSeek Harness、WorkBuddy、Pi、Kimi CLI、Gemini CLI、OpenCode、Antigravity、Antigravity IDE、Qwen Code 和 Cline 旧版任务的本机用量记录。
 
 实际可显示的分项取决于 Agent 提供的记录；已有记录但缺少计数时，会显示为不可用。首次读取较多历史记录可能需要几分钟。
 
